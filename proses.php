@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $angka1 = $_POST['angka1'];
+  $angka2 = $_POST['angka2'];
+  $operator = $_POST['operator'];
+
+  if ($operator === '+') {
+    $hasil = $angka1 + $angka2;
+  } else if ($operator === '-') {
+    $hasil = $angka1 - $angka2;
+  } else if ($operator === '*') {
+    $hasil = $angka1 * $angka2;
+  } else if ($operator === '/') {
+    $hasil = $angka1 / $angka2;
+  } else {
+    $hasil = "Operator tidak valid";
+  }
+
+  echo "Hasil dari ".$angka1." ".$operator." ".$angka2." adalah ".$hasil;
+}
+?>
